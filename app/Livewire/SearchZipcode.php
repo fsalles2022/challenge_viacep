@@ -143,7 +143,7 @@ class SearchZipcode extends Component
         $address = Address::find($id);
 
         if ($address) {
-            $address->update(['deleted_at' => null]); // Define o deleted_at como null
+            $address->delete();
             session()->flash('mensagem', 'Endereço removido com sucesso.');
         } else {
             session()->flash('mensagem', 'Erro ao remover o endereço.');
